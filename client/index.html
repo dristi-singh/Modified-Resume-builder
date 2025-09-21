@@ -1,0 +1,223 @@
+<!-- Converted to Tailwind: 2025-09-21, replaced Bootstrap with Tailwind utilities -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Builder AI</title>
+    <link href="dist/styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Standard Navbar Template for Smart Resume Builder AI -->
+    <nav class="bg-primary-600 text-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a class="text-xl font-bold text-white hover:text-gray-200" href="/">
+                        <i class="fas fa-file-alt mr-2"></i>Smart Resume Builder AI
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-white" 
+                        type="button" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <i class="fas fa-bars" id="menu-icon"></i>
+                </button>
+                
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-4">
+                    <div class="flex items-baseline space-x-4">
+                        <a class="px-3 py-2 rounded-md text-sm font-medium bg-primary-700 text-white" href="/" id="nav-home">
+                            <i class="fas fa-home mr-1"></i>Home
+                        </a>
+                        <a class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-primary-700" href="/resume-builder.html" id="nav-builder">
+                            <i class="fas fa-edit mr-1"></i>Build Resume
+                        </a>
+                        <a class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-primary-700" href="/preview.html" id="nav-preview">
+                            <i class="fas fa-eye mr-1"></i>Preview
+                        </a>
+                        <a class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-primary-700" href="/ats-check.html" id="nav-ats">
+                            <i class="fas fa-chart-line mr-1"></i>ATS Check
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-4 ml-6">
+                        <a class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-primary-700" href="/login.html" id="nav-login">
+                            <i class="fas fa-sign-in-alt mr-1"></i>Login
+                        </a>
+                        <a class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-primary-700" href="/register.html" id="nav-register">
+                            <i class="fas fa-user-plus mr-1"></i>Register
+                        </a>
+                        <!-- User dropdown (hidden by default) -->
+                        <div class="relative" id="userNav" style="display: none;">
+                            <button class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-primary-700 flex items-center" 
+                                    id="navbarDropdown" aria-expanded="false">
+                                <i class="fas fa-user mr-1"></i><span id="userName">User</span>
+                                <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                            <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 hidden" id="userDropdown">
+                                <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/resume-builder.html">
+                                    <i class="fas fa-edit mr-2"></i>My Resumes
+                                </a>
+                                <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/preview.html">
+                                    <i class="fas fa-eye mr-2"></i>Preview Resume
+                                </a>
+                                <hr class="border-gray-200">
+                                <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a class="block px-3 py-2 rounded-md text-base font-medium bg-primary-700 text-white" href="/" id="nav-home-mobile">
+                        <i class="fas fa-home mr-1"></i>Home
+                    </a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-primary-700" href="/resume-builder.html">
+                        <i class="fas fa-edit mr-1"></i>Build Resume
+                    </a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-primary-700" href="/preview.html">
+                        <i class="fas fa-eye mr-1"></i>Preview
+                    </a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-primary-700" href="/ats-check.html">
+                        <i class="fas fa-chart-line mr-1"></i>ATS Check
+                    </a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-primary-700" href="/login.html" id="nav-login-mobile">
+                        <i class="fas fa-sign-in-alt mr-1"></i>Login
+                    </a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-primary-700" href="/register.html" id="nav-register-mobile">
+                        <i class="fas fa-user-plus mr-1"></i>Register
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section bg-gradient-to-r from-primary-600 to-primary-700 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                            Create Professional Resumes with AI
+                        </h1>
+                        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                            Build stunning, professional resumes in minutes with our intelligent resume builder. 
+                            Choose from modern templates and get hired faster.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="/resume-builder.html" class="inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-lg bg-white text-primary-600 hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+                                <i class="fas fa-plus mr-2"></i>Create Resume
+                            </a>
+                            <a href="/login.html" class="inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-lg border-2 border-white text-white hover:bg-white hover:text-primary-600 transition-colors duration-200">
+                                <i class="fas fa-sign-in-alt mr-2"></i>Login
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-file-pdf text-white opacity-25 text-9xl lg:text-[15rem]"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose Our Resume Builder?</h2>
+                <p class="text-xl text-gray-600">Everything you need to create the perfect resume</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-magic text-2xl text-primary-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">AI-Powered</h4>
+                    <p class="text-gray-600">Smart suggestions and formatting to make your resume stand out.</p>
+                </div>
+                <div class="text-center bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-2xl text-primary-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">ATS Score Check</h4>
+                    <p class="text-gray-600">Check your resume's compatibility with Applicant Tracking Systems.</p>
+                </div>
+                <div class="text-center bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">Mobile Responsive</h4>
+                    <p class="text-gray-600">Create and edit your resume on any device, anywhere.</p>
+                </div>
+                <div class="text-center bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-download text-2xl text-primary-600"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">Download PDF</h4>
+                    <p class="text-gray-600">Export your resume as a professional PDF document.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-300">&copy; 2025 Smart Resume Builder AI. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+        });
+        
+        // User dropdown toggle
+        const userDropdownButton = document.getElementById('navbarDropdown');
+        const userDropdown = document.getElementById('userDropdown');
+        
+        if (userDropdownButton && userDropdown) {
+            userDropdownButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                userDropdown.classList.toggle('hidden');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!userDropdownButton.contains(e.target) && !userDropdown.contains(e.target)) {
+                    userDropdown.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
